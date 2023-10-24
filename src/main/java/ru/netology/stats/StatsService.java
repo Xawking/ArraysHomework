@@ -3,21 +3,16 @@ package ru.netology.stats;
 public class StatsService {
     public int totalSales(int[] input) {
         int sum = 0;
-        for (int i = 0; i < input.length; i++) {
-            sum = sum + input[i];
+        for (int i : input) {
+            sum += i;
 
         }
         return sum;
     }
 
     public int monthlyAverageSales(int[] input) {
-        int sum = 0;
-        for (int i = 0; i < input.length; i++) {
-            sum = sum + input[i];
-
-        }
-        int average = sum / input.length;
-        return average;
+        StatsService service = new StatsService();
+        return service.totalSales(input) / input.length;
     }
 
     public int maxSales(int[] input) {
@@ -49,9 +44,9 @@ public class StatsService {
         int average = service.monthlyAverageSales(input);
         int counter = 0;
 
-        for (int i = 0; i < input.length; i++) {
-            if (input[i] < average) {
-                counter = counter + 1;
+        for (int i : input) {
+            if (i < average) {
+                counter += 1;
 
             }
 
@@ -64,9 +59,9 @@ public class StatsService {
         int average = service.monthlyAverageSales(input);
         int counter = 0;
 
-        for (int i = 0; i < input.length; i++) {
-            if (input[i] > average) {
-                counter = counter + 1;
+        for (int i : input) {
+            if (i > average) {
+                counter += 1;
 
             }
 
