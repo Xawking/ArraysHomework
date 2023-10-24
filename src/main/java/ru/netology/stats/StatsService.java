@@ -11,8 +11,7 @@ public class StatsService {
     }
 
     public int monthlyAverageSales(int[] input) {
-        StatsService service = new StatsService();
-        return service.totalSales(input) / input.length;
+        return totalSales(input) / input.length;
     }
 
     public int maxSales(int[] input) {
@@ -40,8 +39,8 @@ public class StatsService {
     }
 
     public int belowAverageSales(int[] input) {
-        StatsService service = new StatsService();
-        int average = service.monthlyAverageSales(input);
+
+        int average = monthlyAverageSales(input);
         int counter = 0;
 
         for (int i : input) {
@@ -55,8 +54,8 @@ public class StatsService {
     }
 
     public int aboveAverageSales(int[] input) {
-        StatsService service = new StatsService();
-        int average = service.monthlyAverageSales(input);
+
+        int average = monthlyAverageSales(input);
         int counter = 0;
 
         for (int i : input) {
